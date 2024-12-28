@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg" x-data="{ open: false }">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo and Brand -->
+          <div class="flex items-center space-x-4">
+            <img
+              alt="Company Logo"
+              class="w-10 h-10"
+              height="40"
+              src="https://storage.googleapis.com/a1aa/image/yKv2f1ziUgUCfU7G2lup5UBqzylQ3yaPhaP6g2HbXqKwi04TA.jpg"
+              width="40"
+            />
+            <a class="text-xl font-bold text-gray-800" href="#">
+              WebEcoMindpreneur
+            </a>
+          </div>
+
+          <!-- Hamburger Button -->
+          <button
+            @click="open = !open"
+            class="md:hidden text-gray-600 focus:outline-none"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+
+          <!-- Menu Links -->
+          <div
+            :class="open ? 'block' : 'hidden'"
+            class="md:flex md:items-center md:space-x-4"
+          >
+            <a class="block px-4 py-2 text-gray-600 hover:text-gray-800" href="#">
+              Learning Patch
+            </a>
+            <a class="block px-4 py-2 text-gray-600 hover:text-gray-800" href="#">
+              Program
+            </a>
+            <a class="block px-4 py-2 text-gray-600 hover:text-gray-800" href="#">
+              Riwayat dan Status Pembelian
+            </a>
+            <a href="Login.html">
+              <button
+                class="block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg"
+              >
+                Login
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

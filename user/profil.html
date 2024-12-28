@@ -1,0 +1,193 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dashboard
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+   </head>
+   <body class="bg-gray-100 min-h-screen">
+      <nav x-data="{ open: false, dropdownOpen: false }" class="bg-white shadow-lg">
+          <div class="container mx-auto px-4">
+              <!-- Navbar Desktop -->
+              <div class="hidden md:flex justify-between items-center py-4">
+                  <div class="flex items-center space-x-4">
+                      <img alt="Company Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/yKv2f1ziUgUCfU7G2lup5UBqzylQ3yaPhaP6g2HbXqKwi04TA.jpg" width="40"/>
+                      <a class="text-xl font-bold text-gray-800" href="index.html">WebEcoMindpreneur</a>
+                      <a class="text-gray-600 hover:text-gray-800" href="LearningPatch.html">Learning Patch</a>
+                      <a class="text-gray-600 hover:text-gray-800" href="profil.html">Profil</a>
+                      <a class="text-gray-600 hover:text-gray-800" href="Pembelian.html">Riwayat dan Status Pembelian</a>
+                  </div>
+                  <div class="relative">
+                      <button class="flex items-center space-x-2 focus:outline-none" @click="dropdownOpen = !dropdownOpen">
+                          <img alt="User profile picture" class="w-8 h-8 rounded-full" height="32" src="https://storage.googleapis.com/a1aa/image/mZFYXk6KENpXLJNrVoHTfGfH5JTnkdftIYgjvdG7CKAGEpxnA.jpg" width="32"/>
+                          <span class="text-gray-800">User Name</span>
+                          <i class="fas fa-chevron-down text-gray-600"></i>
+                      </button>
+                      <!-- Dropdown Menu -->
+                      <div x-show="dropdownOpen" @click.away="dropdownOpen = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Profile</a>
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Settings</a>
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Logout</a>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Navbar Mobile -->
+              <div class="md:hidden flex justify-between items-center py-4">
+                  <!-- Hamburger Button untuk tampilan mobile -->
+                  <button @click="open = !open" class="text-gray-800 focus:outline-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                      </svg>
+                  </button>
+      
+                  <!-- Logo dan Nama Situs -->
+                  <div class="flex items-center space-x-4">
+                      <img alt="Company Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/yKv2f1ziUgUCfU7G2lup5UBqzylQ3yaPhaP6g2HbXqKwi04TA.jpg" width="40"/>
+                      <a class="text-xl font-bold text-gray-800" href="index.html">WebEcoMindpreneur</a>
+                  </div>
+      
+                  <!-- User Menu Mobile -->
+                  <div class="relative">
+                      <button @click="dropdownOpen = !dropdownOpen" class="flex items-center space-x-2 focus:outline-none">
+                          <img alt="User profile picture" class="w-8 h-8 rounded-full" height="32" src="https://storage.googleapis.com/a1aa/image/mZFYXk6KENpXLJNrVoHTfGfH5JTnkdftIYgjvdG7CKAGEpxnA.jpg" width="32"/>
+                          <i class="fas fa-chevron-down text-gray-600"></i>
+                      </button>
+                      <!-- Dropdown Menu -->
+                      <div x-show="dropdownOpen" @click.away="dropdownOpen = false" class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg py-2 z-50">
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Profile</a>
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Settings</a>
+                          <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-200" href="#">Logout</a>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Menu Navigasi untuk tampilan mobile -->
+              <div x-show="open" @click.away="open = false" class="md:hidden absolute top-16 left-0 w-full bg-white border">
+                  <div class="flex flex-col items-center py-4">
+                      <a class="text-gray-600 hover:bg-gray-100 transition duration-200 w-full py-2 px-4 text-center rounded-lg" href="LearningPatch.html">Learning Patch</a>
+                      <a class="text-gray-600 hover:bg-gray-100 transition duration-200 w-full py-2 px-4 text-center rounded-lg" href="profil.html">Profil</a>
+                      <a class="text-gray-600 hover:bg-gray-100 transition duration-200 w-full py-2 px-4 text-center rounded-lg" href="Pembelian.html">Riwayat dan Status Pembelian</a>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      
+   <div class="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+    <div class="flex items-center space-x-4">
+     <img alt="Profile picture of the user" class="w-24 h-24 rounded-full" height="100" src="https://storage.googleapis.com/a1aa/image/8dVKgeQu9vTdZyGOceGCNWIIQoyS1tBAbkrl3PGya521yh5TA.jpg" width="100"/>
+     <div>
+      <h1 class="text-2xl font-bold">
+       John Doe
+      </h1>
+      <p class="text-gray-600">
+       johndoe@example.com
+      </p>
+     </div>
+    </div>
+    <div class="mt-6">
+     <h2 class="text-xl font-semibold mb-4">
+      Personal Information
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+       <p class="text-gray-600">
+        <span class="font-bold">
+         Username:
+        </span>
+        johndoe
+       </p>
+      </div>
+      <div>
+       <p class="text-gray-600">
+        <span class="font-bold">
+         Phone:
+        </span>
+        +1234567890
+       </p>
+      </div>
+      <div>
+       <p class="text-gray-600">
+        <span class="font-bold">
+         Address:
+        </span>
+        123 Main St, Anytown, USA
+       </p>
+      </div>
+      <div>
+       <p class="text-gray-600">
+        <span class="font-bold">
+         Date of Birth:
+        </span>
+        January 1, 1990
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="mt-6">
+     <h2 class="text-xl font-semibold mb-4">
+      Courses Progress
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+       <a href="kelas.html"> 
+      <div class="p-4 bg-gray-50 rounded-lg shadow">
+       <div class="flex items-center">
+        <img alt="Classroom setting with students working on computers for Introduction to Programming course" class="w-16 h-16 object-cover rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/xuBukMbCUJ7IOVySy0B63AY0jZzkyFoSAq5Yfne9dbkzyh5TA.jpg" width="100"/>
+        <div>
+         <p class="text-sm text-green-600 font-semibold">
+          Lulus
+         </p>
+         <h3 class="text-lg font-semibold">
+          Course 1: Introduction to Programming
+         </h3>
+        </div>
+       </div>
+       <div class="mt-4">
+        <p class="text-gray-600">
+         Deskripsi: Kelas ini mengajarkan dasar-dasar pemrograman.
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+         <div class="bg-blue-600 h-4 rounded-full" style="width: 75%;">
+         </div>
+        </div>
+        <p class="text-gray-600 mt-2">
+         Progress: 75%
+        </p>
+       </div>
+      </div>
+    </a>
+      <div class="p-4 bg-gray-50 rounded-lg shadow">
+       <div class="flex items-center">
+        <img alt="Classroom setting with students working on web development projects for Advanced Web Development course" class="w-16 h-16 object-cover rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/aTlxaeOcPRXe8EYHR8MXU6IAEts3TcL99aRGbOgxfFlolDznA.jpg" width="100"/>
+        <div>
+         <p class="text-sm text-green-600 font-semibold">
+          Lulus
+         </p>
+         <h3 class="text-lg font-semibold">
+          Course 2: Advanced Web Development
+         </h3>
+        </div>
+       </div>
+       <div class="mt-4">
+        <p class="text-gray-600">
+         Deskripsi: Kelas ini mengajarkan pengembangan web tingkat lanjut.
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+         <div class="bg-blue-600 h-4 rounded-full" style="width: 50%;">
+         </div>
+        </div>
+        <p class="text-gray-600 mt-2">
+         Progress: 50%
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </body>
+ </html>
