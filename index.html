@@ -25,21 +25,15 @@
                     </a>
                 </div>
     
-                <!-- Tombol Hamburger -->
+                <!-- Tombol Hamburger untuk Mobile -->
                 <button @click="open = !open" class="text-gray-800 md:hidden relative z-50">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
-            </div>
     
-            <!-- Background Overlay untuk Menutup Navbar -->
-                <!-- Link Navigasi -->
-            <div 
-                x-show="open" 
-                class="absolute md:relative top-16 left-0 md:top-0 md:left-0 w-full md:w-auto bg-white md:flex md:items-center z-50"
-                @click.outside="open = false">
-                <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6 px-4 md:px-0 py-4 md:py-0">
+                <!-- Menu Navigasi Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
                     <a class="text-gray-600 hover:text-gray-800 transition duration-200" href="#">
                         Learning Patch
                     </a>
@@ -49,9 +43,6 @@
                     <a class="text-gray-600 hover:text-gray-800 transition duration-200" href="#">
                         Riwayat dan Status Pembelian
                     </a>
-                </div>
-                <!-- Tombol Login -->
-                <div class="flex justify-center md:justify-end md:items-center px-4 py-4 md:py-0">
                     <a href="Login.html">
                         <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 hover:bg-blue-600">
                             Login
@@ -59,8 +50,29 @@
                     </a>
                 </div>
             </div>
+    
+            <!-- Menu Navigasi Mobile -->
+            <div 
+                :class="open ? 'block' : 'hidden'" 
+                class="md:hidden flex flex-col space-y-2 px-4 py-4">
+                <a class="text-gray-600 hover:text-gray-800 transition duration-200" href="#">
+                    Learning Patch
+                </a>
+                <a class="text-gray-600 hover:text-gray-800 transition duration-200" href="#">
+                    Program
+                </a>
+                <a class="text-gray-600 hover:text-gray-800 transition duration-200" href="#">
+                    Riwayat dan Status Pembelian
+                </a>
+                <a href="Login.html">
+                    <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 hover:bg-blue-600 w-full">
+                        Login
+                    </button>
+                </a>
+            </div>
         </div>
     </nav>
+    
     
     
   <div class="w-full">
